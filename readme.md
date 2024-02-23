@@ -14,7 +14,36 @@ Softpal, Amuse-Craft ,CRYSTALiA, Hearts,Us:track, piriri!,Unison Shift...
 
 0. 本项目Python版本：3.10.9，其他版本不清楚能否运行
 
-1. 导出JSON与重打包：
+1. Pac解包：
+
+   ```
+   usage: pac_unpack.py [-h] -pac PAC [-p] [-ua] [-un [UN ...]]
+   
+   options:
+     -h, --help    show this help message and exit
+     -pac PAC      Pac archive file
+     -p            Print file list
+     -ua           Unpack all files
+     -un [UN ...]  Files to be unpacked
+   ```
+
+   example：
+
+   ```
+   python pac_unpack.py -pac data.pac -un SCRIPT.SRC
+   ```
+
+2. Pal文件解密：
+
+   ```
+   usage: pal_file_decrypt.py [-h] [-f F]
+   
+   options:
+     -h, --help  show this help message and exit
+     -f F        File to be decrypted
+   ```
+
+3. 导出JSON与重打包：
 
    放置解密后的SCRIPT.SRC与TEXT.DAT在程序data目录下，执行对应命令。
 
