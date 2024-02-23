@@ -2,6 +2,8 @@
 
 Pal Engine 逆向工程。本地化，脚本解析与编辑/重建工具
 
+此项目主要为个人逆向学习，随缘更新，不一定能完善。
+
 引擎特征：
 
 ​	目录中有：`dll/Pal.dll`
@@ -12,7 +14,7 @@ Softpal, Amuse-Craft ,CRYSTALiA, Hearts,Us:track, piriri!,Unison Shift...
 
 ### 工具使用方法
 
-0. 本项目Python版本：3.10.9，其他版本不清楚能否运行
+0. 本项目Python版本：3.10.9，解密依赖numpy，其他版本不清楚能否运行
 
 1. Pac解包：
 
@@ -46,6 +48,8 @@ Softpal, Amuse-Craft ,CRYSTALiA, Hearts,Us:track, piriri!,Unison Shift...
 3. 导出JSON与重打包：
 
    放置解密后的SCRIPT.SRC与TEXT.DAT在程序data目录下，执行对应命令。
+   
+   -d 导出json，-b将编辑过的文本重新打包。
 
 ```
 usage: pal_script_tool.py [-h] [-d] [-b]
