@@ -70,7 +70,7 @@ class PalText:
         self.bytes_data = bytearray(bytes_data)
         self.index = self.bytes_data[:4]
         self.text = self.bytes_data[4:]
-        self.text_str = str(self.text, encoding='sjis')
+        self.text_str = str(self.text, encoding='sjis',errors='replace')
         self.offset = offset
         self.new_offset = 0
         self.is_modified = False
@@ -119,11 +119,15 @@ class PalTextPack:
         offset = 16
         while offset < len(self.bytes_data):
             text_end = self.bytes_data.find(b'\x00', offset+4)
-            item = PalText(self.bytes_data[offset:text_end], offset)
+            item = None
+            if text_end == -1:
+                item = PalText(self.bytes_data[offset:], offset)
+            else:
+                item = PalText(self.bytes_data[offset:text_end], offset)
             self.text_obj.append(item)
             self.offset_id_map[offset] = i
             i += 1
-            offset = text_end + 1
+            offset += (len(item.bytes_data)+1)
 
     def convert_all_encoding(self, target_encoding='gbk'):
         for i in range(len(self.text_obj)):

@@ -1,4 +1,6 @@
-data/
+data*/
+temp
+*.ipynb
 *.json
 *.SRC
 *.DAT
