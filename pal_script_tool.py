@@ -70,7 +70,7 @@ class PalText:
         self.bytes_data = bytearray(bytes_data)
         self.index = self.bytes_data[:4]
         self.text = self.bytes_data[4:]
-        self.text_str = str(self.text, encoding='sjis',errors='replace')
+        self.text_str = str(self.text, encoding='cp932',errors='replace')
         self.offset = offset
         self.new_offset = 0
         self.is_modified = False
